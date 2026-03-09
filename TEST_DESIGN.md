@@ -60,3 +60,10 @@
 ## Trade-offs
 - Limited time required focusing on high-value scenarios.
 - Additional scenarios documented for future implementation.
+
+## Extra tests that could be used for these UI and API targets
+- Contract Testing for the UI/API boundry that would enable integration checks before deployment.
+- Accessibility testing using the axe-core playwright package for testing against WCAG standards.
+- K6 for performance testing the API endpoints and UI pages.
+- OWASP Zap for security and vulnerability scanning both the UI and the API.
+- Docker could be utilised to run the Portal and the UI tests within a pipeline(Azure Devops for example) this would allow the UI tests to be run on a PR validation pipeline.
