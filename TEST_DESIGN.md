@@ -45,3 +45,15 @@
 - K6 for performance testing the API endpoints and UI pages.
 - OWASP Zap for security and vulnerability scanning both the UI and the API.
 - Docker could be utilised to run the Portal and the UI tests within a pipeline(Azure Devops for example) this would allow the UI tests to be run on a PR validation pipeline.
+
+## Additional Features
+
+### Response Time Checks
+- **Purpose**: Ensure API endpoints meet performance benchmarks.
+- **Implementation**: The `measureResponseTime` utility is used to validate response times against a configurable threshold.
+- **Example**: The `POST /pet` API test includes a response time check to ensure the endpoint responds within the defined limit.
+
+### Accessibility Testing
+- **Purpose**: Validate web pages against WCAG 2.2 standards.
+- **Implementation**: The `runAccessibilityTests` utility is used to scan pages for accessibility violations and generate detailed HTML reports.
+- **Example**: Accessibility tests can be added to UI tests to ensure compliance and generate reports for violations.

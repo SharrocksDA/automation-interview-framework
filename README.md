@@ -10,6 +10,8 @@ It demonstrates both **UI automation** and **API testing** as part of a structur
 - Example positive and negative test scenarios
 - Built-in Playwright HTML reporting
 - Environment variable support via `.env` file
+- **Response Time Checks**: Ensures API responses meet performance benchmarks using a configurable threshold.
+- **Accessibility Testing**: Validates web pages against WCAG 2.2 standards using Axe and generates detailed HTML reports.
 
 ## Setup
 
@@ -75,6 +77,14 @@ npx playwright show-report
 - `test-data/`: Static test data used in the tests.
 - `playwright-report/`: Contains the HTML report generated after test execution.
 - `test-results/`: Stores test results, including JUnit XML and HTML reports.
+
+## Accessibility Testing
+This framework includes automated accessibility testing using Axe. To run accessibility tests:
+1. Ensure the `@axe-core/playwright` package is installed.
+2. Use the `runAccessibilityTests` utility in your tests to validate pages and generate reports.
+
+## Response Time Checks
+Response time checks are implemented using the `measureResponseTime` utility. This ensures API endpoints respond within a configurable threshold defined in the `config.ts` file.
 
 ## Additional Documentation
 - **[TEST_DESIGN.md](TEST_DESIGN.md)**: Explains the implemented scenarios, additional test ideas, and prioritization rationale.
