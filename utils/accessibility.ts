@@ -99,16 +99,10 @@ function saveAccessibilityReport(accessibilityScanResults: AccessibilityScanResu
 `;
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         const dir = require('path').dirname(reportPath);
-        console.log(`Accessibility report written to ${reportPath}`);
-        try {
-            if (!fs.existsSync(dir)) {
-                console.log(`Directory does not exist. Creating directory: ${dir}`);
-                fs.mkdirSync(dir, { recursive: true });
-            }
-            fs.writeFileSync(reportPath, htmlContent, 'utf8');
-            console.log(`Accessibility report successfully written to ${reportPath}`);
-        } catch (error) {
-            console.error(`Failed to write accessibility report: ${error instanceof Error ? error.message : String(error)}`);
+        if (!fs.existsSync(dir)) {
+            console.log(`Directory does not exist. Creating directory: ${dir}`);
+            fs.mkdirSync(dir, { recursive: true });
         }
+        fs.writeFileSync(reportPath, htmlContent, 'utf8');
     }
 }
