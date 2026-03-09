@@ -1,0 +1,23 @@
+{
+  "name": "automation-interview-framework",
+  "version": "1.0.0",
+  "description": "Example Playwright automation framework demonstrating UI testing for Sauce Demo and API testing for the Swagger Petstore, showcasing test structure, positive and negative scenarios, and a maintainable automation design.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharrocksDA/automation-interview-framework.git"
+  },
+  "keywords": [],
+  "author": "David Sharrocks",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SharrocksDA/automation-interview-framework/issues"
+  },
+  "homepage": "https://github.com/SharrocksDA/automation-interview-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.4.0"
+  }
+}
