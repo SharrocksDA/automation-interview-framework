@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Example Playwright automation framework demonstrating UI testing for Sauce Demo and API testing for the Swagger Petstore, showcasing test structure, positive and negative scenarios, and a maintainable automation design.",
   "main": "index.js",
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SharrocksDA/automation-interview-framework.git"
@@ -16,8 +15,14 @@
     "url": "https://github.com/SharrocksDA/automation-interview-framework/issues"
   },
   "homepage": "https://github.com/SharrocksDA/automation-interview-framework#readme",
+  "scripts": {
+    "test:all": "npx playwright test",
+    "test:ui": "npx playwright test --project=ui",
+    "test:api": "npx playwright test --project=api"
+  },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.4.0"
+    "@types/node": "^25.3.5",
+    "dotenv": "^17.3.1"
   }
 }
