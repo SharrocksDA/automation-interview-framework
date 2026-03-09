@@ -5,7 +5,7 @@ import { Pet } from '../../types/petstoreTypes';
 const headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': `special-key`
+    'Authorization': process.env.PETSTORE_API_KEY || ''
 };
 
 interviewTest('should create a pet successfully', async ({ request, buildPet }) => {
