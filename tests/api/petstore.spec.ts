@@ -8,17 +8,19 @@ const headers = {
     'Authorization': process.env.PETSTORE_API_KEY || ''
 };
 
-interviewTest('should create a pet successfully', async ({ request, buildPet }) => {
+interviewTest('should create a pet successfully', async ({ request, buildPet, measureResponseTime }) => {
     // Build a new pet object using the provided utility function.
     const pet = await buildPet(); 
 
-    // Call the API to create a new pet with the generated pet object.
-    const response = await request.post('/v2/pet', {
-        headers: headers,
-        data: pet,
-    });
+    // Use the utility to measure and validate response time
+    const response = await measureResponseTime(() => 
+        request.post('/v2/pet', {
+            headers: headers,
+            data: pet,
+        })
+    );
 
-    // Assert that the response status code is 200 (OK).
+    // Assert response status and body
     expect(response.status()).toBe(200); 
 
     // Parse the response body as a Pet object.
@@ -55,8 +57,3 @@ async function checkPetResponse(response: Pet, pet: Pet): Promise<void> {
 //    - Test with valid and invalid payloads.
 // 7. Get Pets by Status:
 //    - Test the `/pet/findByStatus` endpoint with valid statuses (e.g., `available`, `pending`, `sold`).
-//    - Test with invalid or unsupported statuses.
-// 8. Concurrent Requests:
-//    - Simulate multiple concurrent requests to create or update pets and verify the system handles them correctly.
-// 9. Rate Limiting:
-//    - If applicable, test the API's behavior when the rate limit is exceeded.
