@@ -66,8 +66,30 @@ npx playwright show-report
 - **playwright-report/**: HTML reports generated after test runs.
 - **test-results/**: Raw test results and JUnit XML files.
 
+## Folder Structure
+
+- `tests/api/`: Contains API test cases.
+- `tests/ui/`: Contains UI test cases.
+- `utils/`: Utility functions and shared fixtures.
+- `types/`: Type definitions for API and other shared data structures.
+- `test-data/`: Static test data used in the tests.
+- `playwright-report/`: Contains the HTML report generated after test execution.
+- `test-results/`: Stores test results, including JUnit XML and HTML reports.
+
 ## Additional Documentation
 - **[TEST_DESIGN.md](TEST_DESIGN.md)**: Explains the implemented scenarios, additional test ideas, and prioritization rationale.
+
+## Troubleshooting
+
+### Common Issues
+- **Playwright not installed**: Ensure you have run `npm install` to install all dependencies.
+- **Node.js version mismatch**: Verify that you are using Node.js v16 or higher.
+- **Environment variables not set**: If required, create a `.env` file in the root directory with the necessary variables.
+- **Tests failing due to network issues**: Ensure you have a stable internet connection and the required endpoints are accessible.
+
+### Viewing Reports
+- After running the tests, the HTML report will be generated in the `test-results` directory.
+- To view the report, open the `test-results/index.html` file in your browser.
 
 ## License
 This project is licensed under the MIT License.

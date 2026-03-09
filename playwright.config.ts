@@ -71,3 +71,5 @@ export default defineConfig({
     },
   ]
 });
+
+// Reports are saved in the `test-results` directory. The HTML report can be accessed by opening `test-results/index.html` in a browser.

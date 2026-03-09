@@ -26,31 +26,9 @@
   - Locked-out user login attempt.
   - Logged in user timeout.
 
-## Additional Test Scenarios
-
-### Petstore API
-1. **Get Pet by ID**
-   - Verify the correct pet is returned for a valid ID.
-2. **Delete Pet**
-   - Ensure the pet is successfully deleted and cannot be retrieved.
-3. **Invalid Payloads**
-   - Test error handling for missing or malformed fields.
-4. **Boundary Tests**
-   - Test edge cases for IDs and field lengths.
-
-### Sauce Demo UI
-1. **Invalid Login**
-   - Verify error messages for incorrect credentials.
-2. **Add/Remove Multiple Items**
-   - Test cart functionality with multiple items.
-3. **Checkout Flow**
-   - Validate the happy path and error handling during checkout.
-4. **Session Persistence**
-   - Ensure cart state is maintained across navigation.
-
 ## Rationale
 - **API Layer**: Faster, less flaky, and easier to debug. Ideal for validation, business rules, and error handling.
-- **UI Layer**: Focused on critical user journeys and frontend-backend integration.
+- **UI Layer**: Focused on critical user journeys and high risk areas. These tests should be mocked out for the majority and only a subset of sanity tests be allowed to fully call the backend API's.
 
 ## Prioritization
 1. API tests for core CRUD operations.

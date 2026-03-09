@@ -21,4 +21,31 @@ interviewTest.describe("Sauce Demo UI", () => {
     // Verify cart badge count
     await InventoryPage.checkCartCount(1);
   });
+
+  // Additional Test Scenarios:
+  // 1. Invalid Login:
+  //    - Verify error messages for incorrect credentials.
+  // 2. Session Timeout:
+  //    - Verify that the user is logged out after a period of inactivity and redirected to the login page.
+  // 3. Checkout Flow:
+  //    - Validate the happy path and error handling during checkout.
+  // 4. Add/Remove Multiple Items:
+  //    - Test cart functionality with multiple items.
+  // 5. Session Persistence:
+  //    - Ensure cart state is maintained across navigation.
+  // 6. Sorting and Filtering:
+  //    - Verify that sorting and filtering options on the inventory page work as expected.
+  //    - Test edge cases like no results or invalid filter criteria.
+  // 7. Error Handling:
+  //    - Simulate network failures or server errors and verify that the UI displays appropriate error messages.
+  // 8. Responsive Design:
+  //    - Test the UI on different screen sizes (e.g., mobile, tablet, desktop) to ensure it is responsive.
+  // 9. Accessibility:
+  //    - Test the application for accessibility compliance (e.g., keyboard navigation, screen reader support).
+  // 10. Checkout Edge Cases:
+  //    - Test scenarios like:
+  //       - Attempting to checkout with an empty cart.
+  //       - Removing items from the cart during the checkout process.
+  // 11. UI Performance:
+  //    - Measure the time it takes for key pages (e.g., login, inventory, checkout) to load and ensure it meets performance benchmarks.
 });
