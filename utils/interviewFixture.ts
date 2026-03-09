@@ -3,6 +3,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { buildPet } from "../test-data/pets";
 import { Pet } from "../types/petstoreTypes";
 import { measureResponseTime } from "./responseTimeChecker";
+import { runAccessibilityTests } from "./accessibility";
 import test from "@playwright/test";
 
 type testFixure = {
@@ -10,6 +11,7 @@ type testFixure = {
     InventoryPage: InventoryPage;
     buildPet: () => Promise<Pet>;
     measureResponseTime: (apiCall: () => Promise<any>, threshold?: number) => Promise<any>;
+    runAccessibilityTests: (page: any, reportName: string, violationCountMax: number, testInfo: any) => Promise<any>;
 }
 
 export const interviewTest = test.extend<testFixure>({
@@ -30,4 +32,9 @@ export const interviewTest = test.extend<testFixure>({
             return measureResponseTime(apiCall, threshold);
         });
     },
+    runAccessibilityTests: async ({ }, use) => {
+        await use(async (page: any, reportName: string, violationCountMax: number, testInfo: any) => {
+            return runAccessibilityTests(page, reportName, violationCountMax, testInfo);
+        });
+    }
 });

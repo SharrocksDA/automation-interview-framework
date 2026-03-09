@@ -14,12 +14,14 @@ interviewTest.describe("Sauce Demo UI", () => {
     // This splits up the UI and API tests and allows us to test the UI in isolation without worrying about the API responses.
   });
 
-  interviewTest("should add an item to the cart and check for cart badge count", async ({ InventoryPage }) => {
+  interviewTest("should add an item to the cart and check for cart badge count", async ({ page, InventoryPage, runAccessibilityTests }, testInfo) => {
     // Add item to cart
     await InventoryPage.addItemToCart("backpack");
 
     // Verify cart badge count
     await InventoryPage.checkCartCount(1);
+
+    await runAccessibilityTests(page, 'sauce-demo-inventory-page', 5, testInfo);
   });
 
   // Additional Test Scenarios:
